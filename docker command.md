@@ -6,6 +6,8 @@
 
 * docker image ls :- To list the local machine images
 
+* docker image list :- To list the local machine images
+
 * docker pull nginx :- To pull the images from docker hub
 
 * docker run nginx :- To run the nginx continer in attached format or in foreground
@@ -59,3 +61,10 @@
 * docker cp index.html 2687:/usr/share/nginx/html/index.html :- To copy file from local host to container.
 
 * docker cp 2687:/usr/share/nginx/html/index.html  index.html:- To copy file from container to local host.
+
+* docker rm -f 26fd :- To delete running container forcefully.
+
+* docker image rm nginx:- To delete docker image.
+
+* docker image rm -f nginx :- To delete Image forcefully. When your container is running from that image at that by using rm command you cannot delete the image.then you can use this command.
+
