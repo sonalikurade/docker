@@ -61,3 +61,7 @@ Virtualization and containerization are technologies that help optimize the use 
 - Application isolation in a development environment.
 
 Understanding the differences between virtualization and containerization can help you choose the right technology for your specific use case, balancing the need for efficiency, isolation, and resource utilization.
+
+# There is Two types of Docker Edition
+* community Edition(CE) 
+* Enterprise Edition(EE)
