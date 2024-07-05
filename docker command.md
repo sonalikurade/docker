@@ -70,3 +70,5 @@
 
 * docker save -o my-image.tar my-image :- To create tar file of my image
 
+* docker build . :- To build docker file
+
