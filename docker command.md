@@ -68,3 +68,5 @@
 
 * docker image rm -f nginx :- To delete Image forcefully. When your container is running from that image at that by using rm command you cannot delete the image.then you can use this command.
 
+* docker save -o my-image.tar my-image :- To create tar file of my image
+
