@@ -65,3 +65,43 @@ Understanding the differences between virtualization and containerization can he
 # There is Two types of Docker Edition
 * community Edition(CE) 
 * Enterprise Edition(EE)
+
+# Docker Volume Types:
+In Docker, persistent volumes are used to retain data across container lifecycles. There are two main types of persistent volumes:
+## 1. Host Volumes (Bind Mounts)
+Host volumes, or bind mounts, use directories or files on the host filesystem. They are mounted directly into containers, which means changes made in the container are reflected on the host and vice versa.</br>
+
+Usage Example:
+  docker run -d -v /path/on/host:/path/in/container my_image
+* In this example, /path/on/host is a directory on the host machine, and /path/in/container is the directory inside the container where the host directory is mounted.
+
+### Characteristics:
+* Data persists as long as it exists on the host filesystem.
+* Direct access to the host's filesystem.
+* Useful for development where you need immediate feedback from changes on the host
+
+## 2. Docker Volumes / Simple Volume
+Docker volumes are managed by Docker and stored in a location defined by Docker (often /var/lib/docker/volumes/ on Linux). These volumes are easier to manage, back up, and migrate compared to bind mounts.
+
+### Usage Example:
+docker volume create my_volume
+docker run -d -v my_volume:/path/in/container my_image
+
+* In this example, a Docker-managed volume named my_volume is created and then mounted to /path/in/container inside the container.
+
+### Characteristics:
+* Data is managed by Docker and stored in a special location.
+* Volumes can be named and easily shared between containers.
+* Better for production use cases where data needs to be more portable and manageable.
+
+## Key Differences:
+### Host Volumes (Bind Mounts):
+* Use any directory or file on the host filesystem.
+* Immediate reflection of changes between host and container.
+* Less portable and harder to manage for backup and migration.
+
+### Docker Volumes:
+* Managed by Docker and stored in Docker-specific locations.
+* Easier to manage, back up, and migrate.
+* More suitable for production environments and sharing data between containers.
+
