@@ -105,3 +105,6 @@ docker run -d -v my_volume:/path/in/container my_image
 * Easier to manage, back up, and migrate.
 * More suitable for production environments and sharing data between containers.
 
+## Summary
+* Host Volumes (Bind Mounts): Directly mount host directories or files, reflecting changes between host and container, ideal for development.
+* Docker Volumes: Managed by Docker, stored in Docker-specific locations, more portable, and ideal for production use.
