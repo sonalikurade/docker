@@ -108,3 +108,15 @@ docker run -d -v my_volume:/path/in/container my_image
 ## Summary
 * Host Volumes (Bind Mounts): Directly mount host directories or files, reflecting changes between host and container, ideal for development.
 * Docker Volumes: Managed by Docker, stored in Docker-specific locations, more portable, and ideal for production use.
+
+# Networking overview
+Container networking refers to the ability for containers to connect to and communicate with each other, or to non-Docker workloads.
+
+## User-defined networks:
+You can create custom, user-defined networks, and connect multiple containers to the same network. Once connected to a user-defined network, containers can communicate with each other using container IP addresses or container names.
+
+The following example creates a network using the bridge network driver and running a container in the created network:
+
+docker network create -d bridge my-net
+docker run --network=my-net -itd --name=container3 busybox
+
